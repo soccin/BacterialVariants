@@ -1,8 +1,23 @@
 #!/bin/bash
 
-PROJNO=proj_04298_D
+#
+# Need to run PEMapper
+
+## CMDS:
+## ls -d /ifs/archive/GCL/hiseq/FASTQ/*/P*4298*[EF]*/S* >sampleDIRS
+## getMappingSheet.sh sampleDIRS >Proj_04928_EF_sample_mapping.txt
+## ../PEMapper/runPEMapperMultiDirectories.sh eColi_MG1665 Proj_04928_EF_sample_mapping.txt
+
 
 SDIR="$( cd "$( dirname "$0" )" && pwd )"
+
+if [ "$#" -lt 1 ]; then
+    echo "usage: pipe.sh 1_MD.bam [i_MD.bam ...]"
+    exit
+fi
+
+PROJNO=$(basename $PWD)
+echo $PROJNO
 
 BAMS=$*
 
