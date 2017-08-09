@@ -1,9 +1,10 @@
 #!/bin/sh
+SDIR="$( cd "$( dirname "$0" )" && pwd )"
 
 JAVA=/opt/common/CentOS_6-dev/bin/current/java
-
 GATK=/opt/common/CentOS_6/gatk/GenomeAnalysisTK-3.4-0-g7e26428/GenomeAnalysisTK.jar
-SNPEFFS=/ifs/assets/socci/LUXWork/ifs/data/socci/Work/SeqAna/Annotators/SNPEff/v_3.3h/snpEff
+
+SNPEFFS=$SDIR/SNPEff/v_3.3h/snpEff
 
 if [ ! $# -eq 3 ]; then
     echo
