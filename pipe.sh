@@ -83,9 +83,10 @@ $SDIR/haplotypeCallerDMP.sh \
 
 VCF=$(ls -1rt output/*/*/haplo*vcf | tail -1)
 
+SNPEFF_GENOME=Escherichia_coli_K_12_substr__MG1655_uid57779
 
 $SDIR/snpEffAnnote.sh \
-    Escherichia_coli_K_12_substr__MG1655_uid57779 \
+    $SNPEFF_GENOME \
     $VCF \
     $GENOME
 
